@@ -1,3 +1,4 @@
+//operadores de comparacion 
 const numero1 = 3;
 const numero2 = 49;
 const numero3 = 3;
@@ -12,7 +13,7 @@ console.log(numero2 == numero1);
 console.log(numero1 === numero3);
 console.log(numero1 === parseInt(numero4));
 
-//comparador para ver si son diferentes los datos
+//comparador de desigualdad tambien se puede usar de manera estricta
 
 const user1 = "admin";
 const user2= "Admin";
