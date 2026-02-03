@@ -10,7 +10,13 @@ const order = {
     },
   },
 };
+  const nuevoemail= Object.entries(order.client.email).reduce((nuevo, [clave, valor]) => {
+    if(valor==='sukisuki@mail.com'){
+      nuevo[clave] = '12132@gmail.com';
+    }else{
+     nuevo[clave] = valor
+    }
+    return nuevo;
+  }, {});
 
-const {email : {email2}} = order;
-
-    console.log(email2);
+console.log(`al usuario, ${order.client.name}, actualizo su primero correo:`, nuevoemail);
