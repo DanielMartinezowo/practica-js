@@ -11,6 +11,3 @@ const order = {
   },
 };
 
-const {email : {email2}} = order;
-
-    console.log(email2);
