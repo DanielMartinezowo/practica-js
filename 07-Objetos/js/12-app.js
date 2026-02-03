@@ -4,14 +4,15 @@
         animal : 'mono',
         clima : 'nublado'
     };
-    const reemplazo = {
-        manzana : 'apple',
-        mono : 'monkey',
-        nublado : 'cloudy'
+    const reemplazoClaves = {
+        fruta : 'fruit',
+        animal : 'animal',
+        clima : 'weather'
     };
-    const objetosTraducidos = Object.entries(objetos).reduce((nuevoObj, [clave, valorEsp]) => {
+    const objetosTraducidos = Object.entries(objetos).reduce((nuevoObj, [clave, valor]) => {
+        const nuevaClave = reemplazoClaves[clave];
+        nuevoObj[nuevaClave] = valor;
 
-        nuevoObj[clave] = reemplazo[valorEsp];
         return nuevoObj;
     }, {});
 
