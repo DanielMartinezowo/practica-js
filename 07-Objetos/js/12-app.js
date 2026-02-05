@@ -5,15 +5,24 @@
         clima : 'nublado'
     };
     const reemplazoClaves = {
-        fruta : 'fruit',
         animal : 'animal',
-        clima : 'weather'
+        clima : 'weather',
+        fruta : 'fruit'
     };
-    const objetosTraducidos = Object.entries(objetos).reduce((nuevoObj, [clave, valor]) => {
+    
+    /*const objetosTraducidos = Object.entries(objetos).reduce((nuevoObj, [clave, valor]) => {
         const nuevaClave = reemplazoClaves[clave];
         nuevoObj[nuevaClave] = valor;
 
         return nuevoObj;
     }, {});
+    console.log(objetosTraducidos);*/
 
-    console.log(objetosTraducidos);
+    const ejemploTranslate = {};
+
+    Object.keys(objetos).forEach((objetosEsp) => {
+        const nuevoObj  = reemplazoClaves [objetosEsp];
+        ejemploTranslate[nuevoObj] = objetos [objetosEsp];
+    });
+
+    console.log(ejemploTranslate);

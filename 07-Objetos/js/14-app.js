@@ -18,6 +18,4 @@ const nuevoHobbie = {nombre:"cocinar", tiempo:50}
 persona.hobbies.push(nuevoHobbie)
 const nombresHob = persona.hobbies.map(item => item.nombre);
 
-const {edad, ...personaUpd} = persona;
-
-console.log(personaUpd);
+console.log(nombresHob);

@@ -10,7 +10,7 @@ const order = {
     },
   },
 };
-  const nuevoemail= Object.entries(order.client.email).reduce((nuevo, [clave, valor]) => {
+  /*const nuevoemail= Object.entries(order.client.email).reduce((nuevo, [clave, valor]) => {
     if(valor==='pulga@mail.com'){
       nuevo[clave] = '12132@gmail.com';
     }else{
@@ -19,4 +19,11 @@ const order = {
     return nuevo;
   }, {});
 
-console.log(`al usuario, ${order.client.name}, actualizo su primer correo:`, nuevoemail);
+console.log(`al usuario, ${order.client.name}, actualizo su primer correo:`, nuevoemail);*/
+
+Object.keys(order.client.email).forEach((clave)=>{
+  if (order.client.email[clave] ==='pulga@mail.com')
+    {order.client.email[clave] = '121as32@gmail.com'}
+});
+
+console.log(`al usuario, ${order.client.name}, actualizo su segundo correo: ${order.client.email.email2}`);
