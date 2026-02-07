@@ -80,9 +80,25 @@ const USERS = [
     profile: { type: "color", data: { bg: "#14B8A6", color: "#FFFFFF" } },
   },
 ];
+//uso de every
 const emailCounts = USERS.every(emails => emails.email.length >= 1);
 console.log(emailCounts);
 
 const dataVF = USERS.every(datas => ('profile'in datas)
 &&('data'in datas.profile)&&('bg'in datas.profile.data));
 console.log(dataVF);
+
+
+//uso de reduce
+const countStatus = USERS.reduce((clave, user)=>{
+  clave[user.status] =(clave[user.status] || 0) +1;
+  return clave;
+},{});
+console.log(countStatus); 
+
+const allEmails = USERS.reduce((obj, all)=>{
+return obj.concat(all.email);
+  
+},[]);
+
+console.log(allEmails);
