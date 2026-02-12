@@ -36,4 +36,10 @@ function renderUsersInHtml(users) {
   //
 }
 
-fetchUsers(renderUsersInHtml);
+function handleFetcherUsers(users) {
+  printUsers(users);
+  saveUsersToLocalStorage(users);
+  renderUsersInHtml(users);
+}
+
+fetchUsers(handleFetcherUsers);
