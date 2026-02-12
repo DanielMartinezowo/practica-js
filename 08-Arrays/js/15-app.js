@@ -28,7 +28,6 @@ const products = [
   },
 ];
 
-
 const productF = products.find((findSku)=> findSku.sku === 'FRU-002');
 console.log(`el producto: ${productF.sku} existe`);
 

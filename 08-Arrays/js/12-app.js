@@ -42,8 +42,25 @@ users.forEach((namesUsers)=>{
 })
 
   const numeros = [1, 5, 8, 20];
-  console.log(numeros.join('|'));
+  console.log(numeros.join(' | '));
+  //no suponer
 
-  const selectedUsers = ["Ana López", "Carlos Martínez", "Sofía Ramírez"];
-  const selectedPt1 = selectedUsers.slice(0, 2).join(',');
-  console.log(`${selectedPt1} y ${selectedUsers[2]}`);
+
+  const selectedUsers = ["Ana López", "Carlos Martínez","Cristian Toledo", "Ivon Ivon","Luis", "Sofía Ramírez"];
+  const nombresFormat = (nombres)=>{
+    {if(nombres.length===0)
+      return '';
+      if(nombres.length===1)
+        return nombres [0]
+    }
+    const cuerpo =  nombres.slice(0,-1).join(', ')
+    const final = nombres.slice([nombres.length -1])
+    
+    return (`${cuerpo} y ${final}`);
+  }
+  console.log(nombresFormat(selectedUsers));
+
+
+  /* const selectedPt1 = selectedUsers.slice(0, 2).join(', ');
+  console.log(`${selectedPt1} y ${selectedUsers[2]}`); */
+  //mejora para mas casos de uso

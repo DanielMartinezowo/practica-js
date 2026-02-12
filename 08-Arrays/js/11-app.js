@@ -29,29 +29,50 @@ const users = [
       mobile: null,
     },
   },
+  {
+    status: "baja",
+    email: [],
+    user: "jperez",
+    fullname: "Juan Perez",
+    contact: {
+      phone: "8187654321",
+      mobile: null,
+    },
+  },
 ];
-/*uso del .map
-const nameList = users.map(usuario => usuario.fullname.toUpperCase());
-console.log(nameList);
-const emailList = users.map(emails => emails.email);
-console.log(emailList)*/
+/* //uso del .map
+  const nameList = users.map(usuario => {
+  return {
+    ...usuario,
+    fullname : usuario.fullname.toUpperCase()
+  };
+});
+  console.log(nameList);
+//retornar objeto completo, solo nombre en mayusculas
 
+const emailList = users.flatMap(emails => emails.email);
+console.log(emailList)
+// //pasarlo a un arreglo de strings
+//  /*[ 'ana.lopez@gmail.com', 'ana.trabajo@gmail.com' ,
+//    'carlos.martinez@gmail.com' ,
+//    'sofia.ramirez@gmail.com' ]*/
 
-/*uso de .filter
-const usersAlt = users.filter(usuario => usuario.status.includes("Alta"))
-.map(user => user.fullname.toUpperCase());
+ ///uso de .filter */
+const regEx = /baja/i;
+  const usersAlt = users.filter(usuario => regEx.test(usuario.status))
+ .map(user => user.fullname.toUpperCase());
 
-const emailCounts = users.filter(emails => emails.email.length <= 1)
-.map(user => user.fullname.toUpperCase());;
-
-console.log(usersAlt);
-
-console.log(emailCounts);*/
+ const emailCounts = users.filter(emails => emails.email.length === 1)
+ .map(user => user.fullname.toUpperCase());;
+ //mejora de ejercicios, filtrado de alta y contador de correos dados de baja
+ console.log(usersAlt);
+ console.log(emailCounts)
 
 //uso de some
-const statusDecline = users.some(usuario => usuario.status === "Alta");
+/* const statusDecline = users.some(usuario => usuario.status === "Baja");
 
 console.log(statusDecline);
 
 const numberEmpty = users.some(number => number.contact.mobile === null);
 console.log(numberEmpty);
+ */
