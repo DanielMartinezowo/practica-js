@@ -1,41 +1,41 @@
 const users = [
   {
-    status: "Alta",
-    email: ["ana.lopez@gmail.com", "ana.trabajo@gmail.com"],
-    user: "analopez",
-    fullname: "Ana López",
+    status: 'Alta',
+    email: ['ana.lopez@gmail.com', 'ana.trabajo@gmail.com'],
+    user: 'analopez',
+    fullname: 'Ana López',
     contact: {
-      phone: "5512345678",
-      mobile: "5511122233",
+      phone: '5512345678',
+      mobile: '5511122233',
     },
-      },
+  },
   {
-    status: "Alta",
-    email: ["carlos.martinez@gmail.com"],
-    user: "cmartinez",
-    fullname: "Carlos Martínez",
+    status: 'pAlta',
+    email: ['carlos.martinez@gmail.com'],
+    user: 'cmartinez',
+    fullname: 'Carlos Martínez',
     contact: {
-      phone: "3323456789",
+      phone: '3323456789',
       mobile: null,
     },
   },
   {
-    status: "Baja",
-    email: ["sofia.ramirez@gmail.com"],
-    user: "sramirez",
-    fullname: "Sofía Ramírez",
+    status: 'Baja',
+    email: ['sofia.ramirez@gmail.com'],
+    user: 'sramirez',
+    fullname: 'Sofía Ramírez',
     contact: {
-      phone: "8187654321",
+      phone: '8187654321',
       mobile: null,
     },
   },
   {
-    status: "baja",
+    status: 'baja',
     email: [],
-    user: "jperez",
-    fullname: "Juan Perez",
+    user: 'jperez',
+    fullname: 'Juan Perez',
     contact: {
-      phone: "8187654321",
+      phone: '8187654321',
       mobile: null,
     },
   },
@@ -57,16 +57,18 @@ console.log(emailList)
 //    'carlos.martinez@gmail.com' ,
 //    'sofia.ramirez@gmail.com' ]*/
 
- ///uso de .filter */
-const regEx = /baja/i;
-  const usersAlt = users.filter(usuario => regEx.test(usuario.status))
- .map(user => user.fullname.toUpperCase());
+///uso de .filter */
+const regEx = /alta/i;
+const usersAlt = users
+  .filter((usuario) => regEx.test(usuario.status))
+  .map((user) => user.fullname.toUpperCase());
 
- const emailCounts = users.filter(emails => emails.email.length === 1)
- .map(user => user.fullname.toUpperCase());;
- //mejora de ejercicios, filtrado de alta y contador de correos dados de baja
- console.log(usersAlt);
- console.log(emailCounts)
+const emailCounts = users
+  .filter((emails) => emails.email.length === 1)
+  .map((user) => user.fullname.toUpperCase());
+//mejora de ejercicios, filtrado de alta y contador de correos dados de baja
+console.log(usersAlt);
+console.log(emailCounts);
 
 //uso de some
 /* const statusDecline = users.some(usuario => usuario.status === "Baja");

@@ -1,66 +1,63 @@
 const users = [
   {
-    status: "Alta",
-    email: ["ana.lopez@gmail.com", "ana.trabajo@gmail.com"],
-    user: "analopez",
-    fullname: "Ana López",
+    status: 'Alta',
+    email: ['ana.lopez@gmail.com', 'ana.trabajo@gmail.com'],
+    user: 'analopez',
+    fullname: 'Ana López',
     contact: {
-      phone: "5512345678",
-      mobile: "5511122233",
+      phone: '5512345678',
+      mobile: '5511122233',
     },
-      },
+  },
   {
-    status: "Alta",
-    email: ["carlos.martinez@gmail.com"],
-    user: "cmartinez",
-    fullname: "Carlos Martínez",
+    status: 'Alta',
+    email: ['carlos.martinez@gmail.com'],
+    user: 'cmartinez',
+    fullname: 'Carlos Martínez',
     contact: {
-      phone: "3323456789",
+      phone: '3323456789',
       mobile: null,
     },
   },
   {
-    status: "Baja",
-    email: ["sofia.ramirez@gmail.com"],
-    user: "sramirez",
-    fullname: "Sofía Ramírez",
+    status: 'Baja',
+    email: ['sofia.ramirez@gmail.com'],
+    user: 'sramirez',
+    fullname: 'Sofía Ramírez',
     contact: {
-      phone: "8187654321",
+      phone: '8187654321',
       mobile: null,
     },
   },
 ];
 
-users.forEach((user)=>{
-    if(user.contact.mobile !== null){
-        console.log(user);
-    }
-}) 
-
-users.forEach((namesUsers)=>{
-      console.log(`Usuarios: ${namesUsers.fullname}, Status: ${namesUsers.status}`)
-})
-
-  const numeros = [1, 5, 8, 20];
-  console.log(numeros.join(' | '));
-  //no suponer
-
-
-  const selectedUsers = ["Ana López", "Carlos Martínez","Cristian Toledo", "Ivon Ivon","Luis", "Sofía Ramírez"];
-  const nombresFormat = (nombres)=>{
-    {if(nombres.length===0)
-      return '';
-      if(nombres.length===1)
-        return nombres [0]
-    }
-    const cuerpo =  nombres.slice(0,-1).join(', ')
-    const final = nombres.slice([nombres.length -1])
-    
-    return (`${cuerpo} y ${final}`);
+users.forEach((user) => {
+  if (user.contact.mobile !== null) {
+    console.log(user);
   }
-  console.log(nombresFormat(selectedUsers));
+});
 
+users.forEach((namesUsers) => {
+  console.log(`Usuarios: ${namesUsers.fullname}, Status: ${namesUsers.status}`);
+});
 
-  /* const selectedPt1 = selectedUsers.slice(0, 2).join(', ');
+const numeros = [1, 5, 8, 20];
+console.log(numeros.join(' | '));
+//no suponer
+
+//const selectedUsers = ["Ana López", "Carlos Martínez","Cristian Toledo", "Ivon Ivon","Luis", "Sofía Ramírez"];
+const selectedUsers = ['ana', 'javier'];
+const nombresFormat = (nombres) => {
+  if (nombres.length === 0) return '';
+  if (nombres.length === 1) return nombres[0];
+
+  const cuerpo = nombres.slice(0, -1).join(', ');
+  const final = nombres.slice([nombres.length - 1]);
+
+  return `${cuerpo} y ${final}`;
+};
+console.log(nombresFormat(selectedUsers));
+
+/* const selectedPt1 = selectedUsers.slice(0, 2).join(', ');
   console.log(`${selectedPt1} y ${selectedUsers[2]}`); */
-  //mejora para mas casos de uso
+//mejora para mas casos de uso
