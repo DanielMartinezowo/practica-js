@@ -10,7 +10,7 @@ const users = [
     },
   },
   {
-    status: 'pAlta',
+    status: 'altass',
     email: ['carlos.martinez@gmail.com'],
     user: 'cmartinez',
     fullname: 'Carlos Martínez',
@@ -58,9 +58,8 @@ console.log(emailList)
 //    'sofia.ramirez@gmail.com' ]*/
 
 ///uso de .filter */
-const regEx = /alta/i;
-const usersAlt = users
-  .filter((usuario) => regEx.test(usuario.status))
+
+const usersAlt = users .filter((usuario) => (usuario.status ==='alta' || usuario.status ==='Alta'))
   .map((user) => user.fullname.toUpperCase());
 
 const emailCounts = users
