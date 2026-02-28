@@ -17,7 +17,7 @@ const products = [
     id: 2,
     sku: 'FRU-002',
     name: 'Pera Verde',
-    category: 'frutas',
+    category: 'verduras',
     price: 12,
     currency: 'MXN',
     stock: 0,
@@ -43,6 +43,20 @@ const products = [
   },
 ];
  
- const productAct = products.find((product) => product.isActive === true && product.stock === 0);
+/*  const productAct = products.find((product) => product.isActive === true && product.stock === 0);
  const pricenew = productAct.price = 14;
- console.log(productAct);
+ console.log(productAct); */
+
+ function createSearcher (data){
+   return function(search){
+    const productss = search.toLowerCase();
+     return data.filter(product =>{
+      const nameM = product.name.toLowerCase().includes(productss)
+      const categoryf = product.category.toLowerCase().includes(productss)
+     return nameM || categoryf
+    })
+  }
+ }
+
+ const searcher = createSearcher(products)
+ console.log("Resultado de busqueda para ", searcher('manzana'))
